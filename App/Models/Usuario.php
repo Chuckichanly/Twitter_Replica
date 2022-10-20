@@ -14,15 +14,15 @@ class Usuario extends Model {
   public function __get($atributo){
     return $this->$atributo;
   }
-
+// 15:49
   public function __set($atributo, $valor){
-    return $this->$atributo;
+    $this->$atributo = $valor;
   }
 
   //salvar
   public function salvar(){
 
-    $query = "insert into usuarios(nome,email,senha) values(:nome,:email,:senha)";
+    $query = "INSERT into usuarios(nome,email,senha)values(:nome,:email,:senha)";
     $stmt = $this->db->prepare($query);
     $stmt->bindValue(':nome', $this->__get('nome'));
     $stmt->bindValue(':email', $this->__get('email'));
