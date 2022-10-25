@@ -9,7 +9,7 @@ use MF\Model\Container;
 class AppController extends Action {
 
   public function timeline(){
-    
+
     $this->validaAutenticacao();
     
     //recuperação dos tweets
@@ -32,7 +32,7 @@ class AppController extends Action {
   public function tweet(){
 
     $this->validaAutenticacao();
-   
+    
     $tweet = Container::getModel('Tweet');
     $tweet->__set('tweet', $_POST['tweet']);
     $tweet->__set('id_usuario', $_SESSION['id']);
@@ -49,6 +49,13 @@ class AppController extends Action {
     if(!isset($_SESSION['id']) || $_SESSION['id'] == '' || !isset($_SESSION['nome']) || $_SESSION['nome'] == ''){
       header('Location: /?login=erro');
     }
+  }
+
+  public function quemSeguir(){
+    
+    $this->validaAutenticacao();
+
+    echo 'Estamos aqui!';
   }
 }
 
