@@ -107,6 +107,7 @@ class AppController extends Action {
       $usuario->deixarSeguirUsuario($id_usuario_seguindo);
     }
 
+    header('Location: /quem_seguir');
   }
 }
 
