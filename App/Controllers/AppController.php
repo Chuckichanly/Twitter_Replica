@@ -58,26 +58,44 @@ class AppController extends Action {
     // echo '<br/><br/><br/><br/><br/><br/><br/>';
     // echo '<pre>';
     $pesquisarPor = isset($_GET['pesquisarPor']) ? $_GET['pesquisarPor'] : '';
+
     // echo '</pre>';
     // echo 'Pesquisando por: '.$pesquisarPor;
-
+    
     $usuarios = array();
+    
+    // echo '<br/><br/><br/><br/><br/><br/><br/>';
+    // echo '<pre>';
+    // print_r($_SESSION);
+    // echo '</pre>';
     
     if($pesquisarPor != ''){
 
       $usuario = Container::getModel('Usuario');
       $usuario->__set('nome', $pesquisarPor);
+      $usuario->__set('id', $_SESSION['id']);
       $usuarios= $usuario->getAll();
       
       // echo '<pre>';
       // print_r($usuarios);
       // echo '</pre>';
-
+      
     }
-
+    
     $this->view->usuarios = $usuarios;
     
     $this->render('quemSeguir');
+  }
+
+  public function acao(){
+
+    $this->validaAutenticacao();
+
+    echo '<pre>';
+    print_r($_GET);
+    echo '</pre>';
+
+
   }
 }
 
