@@ -55,7 +55,12 @@ class AppController extends Action {
     
     $this->validaAutenticacao();
 
-    echo 'Estamos aqui!';
+    echo '<br><br><br><br><br><br><br>';
+    echo '<pre>';
+    print_r($_GET);
+    echo '</pre>';
+    
+    $this->render('quemSeguir');
   }
 }
 
