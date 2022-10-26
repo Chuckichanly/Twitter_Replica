@@ -57,7 +57,14 @@ class Tweet extends Model {
     return $stmt->fetchAll(\PDO::FETCH_ASSOC);
   }
 
-
 }
 
+/* Como implementar a função para eliminar os seus tweets:
+  +crie uma rota O
+  -faça um envio de paramteros para essa rota
+  -com base nesa rota execute um controlardor e  detrno dese controlador uma action
+  -faça com q essa action trabalhe essa logica de remoçao do tweet
+  -redirecione para a timeline para ver a remoçao do tweet
+  
+  JA FIZEMOS DIVERSAS VEZES O FLUXO É BEM PARECDO COM 'DEIXAR DE SEGUIR' OU 'SEGUIR'*/
 ?>
