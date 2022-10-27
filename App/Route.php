@@ -62,6 +62,12 @@ class Route extends Bootstrap {
 			'action' => 'acao'
 		);
 
+		$routes['apagar_tweet'] = array(
+			'route' => '/apagar_tweet',
+			'controller' => 'AppController',
+			'action' => 'apagar_tweet'
+		);
+
 		$this->setRoutes($routes);
 	}
 
